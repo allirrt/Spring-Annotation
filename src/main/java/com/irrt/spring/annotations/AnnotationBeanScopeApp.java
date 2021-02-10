@@ -7,11 +7,11 @@ public class AnnotationBeanScopeApp {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         Coach alphaCoach = context.getBean("tennisCoach", TennisCoach.class);
         Coach bettaCoach = context.getBean("tennisCoach", TennisCoach.class);
-boolean b = (alphaCoach == bettaCoach);
-boolean b1 = alphaCoach.equals(bettaCoach);
+        boolean b = (alphaCoach == bettaCoach);
+        boolean b1 = alphaCoach.equals(bettaCoach);
 
         System.out.println(b + " " + b1);
-context.close();
+        context.close();
 
 
     }

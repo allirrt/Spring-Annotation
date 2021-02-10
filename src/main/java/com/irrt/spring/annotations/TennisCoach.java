@@ -2,7 +2,6 @@ package com.irrt.spring.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -10,7 +9,7 @@ import javax.annotation.PreDestroy;
 
 @Component
 //@Scope("prototype")
-public class TennisCoach implements Coach{
+public class TennisCoach implements Coach {
     @Qualifier("randomFortuneService")
     @Autowired
 
@@ -24,18 +23,18 @@ public class TennisCoach implements Coach{
 //        this.fortuneService = fortuneService;
 //    }
 
-//    public void crazyStaff(FortuneService fortuneService) {
+    //    public void crazyStaff(FortuneService fortuneService) {
 //        this.fortuneService = fortuneService;
 //    }
     @PostConstruct
-    public void initMethod(){
+    public void initMethod() {
         System.out.println("Проведена инициализация бина");
     }
+
     @PreDestroy
-    public void preDestroyMethod(){
+    public void preDestroyMethod() {
         System.out.println("Запущен preDestroyMethod");
     }
-
 
 
     @Override
